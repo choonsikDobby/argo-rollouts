@@ -24,6 +24,9 @@ spec:
         - containerPort: 8080
   strategy:
     canary:
+      # 내가 제어할 서비스들의 이름을 명시
+      stableService: canary-demo
+      canaryService: canary-demo-canary
       steps:
       - setWeight: 20
       # The following pause step will pause the rollout indefinitely until manually resumed.
